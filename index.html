@@ -4,6 +4,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <Title> Meri Pathshala</title>
 <style>
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
 background:url("background.png");
 background-size:cover;
@@ -14,12 +19,20 @@ background-width:100vh;
             align-items: center;
 }
 .welcome{
+ margin: 0 auto; 
 color:brown;
 height:50vh;
 width:70vh;
-margin-left:50vh;
-margin-top:2vh;
+ display: flex;
+    flex-direction: column;
+
 }
+ @media screen and (min-width: 768px) {
+    .main-content {
+        flex-direction: row; /* Switch from vertical stack to horizontal row */
+        justify-content: space-between;
+    }
+
 </style>
 </head>
 <body>
