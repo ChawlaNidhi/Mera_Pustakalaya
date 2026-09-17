@@ -1,57 +1,133 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
- <meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<Title> Meri Pathshala</title>
-<style>
- * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  display: flex;
-}
-body{
-background:url("background.png");
-background-size:cover;
-background-height:100vh;
-background-width:100vh;
- display: flex;
-            justify-content: center;
-            align-items: center;
-}
-.welcome{
- margin: 0 auto; 
-color:brown;
-height:50vh;
-width:70vh;
- display: flex;
-    flex-direction: row;
+    <meta charset="UTF-8"> 
+    <!-- 1. CRITICAL: Enables mobile layout and scaling scales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meri Pathshala</title>
+    <style>
+        /* 2. GLOBAL RESET & SIZING CONTROL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Crucial for layout math */
+        }
 
-}
- @media screen and (min-width: 768px) {
-    .main-content {
-        flex-direction: row; /* Switch from vertical stack to horizontal row */
-        justify-content: space-between;
-    }}
-.nav{
-background-color:blue;
-}
-.nav_options{
-float:left;}
-</style>
+        body {
+            /* Fixes background image stretch and prevents duplicates */
+            background: url("background.png") no-repeat center center fixed;
+            background-size: cover;
+            font-family: sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 3. WRAPPER CONTAINER */
+        .container {
+            width: 100%;
+            max-width: 1200px; /* Limits size on massive desktop monitors */
+            margin: 0 auto;    /* Centers everything on the screen */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;           /* Pushes footer to the absolute bottom */
+        }
+
+        /* 4. RESPONSIVE NAVIGATION (Mobile-First) */
+        .nav {
+            display: flex;
+            flex-direction: column; /* Stack menu items vertically on mobile phones */
+            gap: 15px;              /* Replaces chaotic &nbsp; spacing */
+            text-align: center;
+            padding: 20px 0;
+            color: darkgreen;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav_options {
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .nav_options:hover {
+            color: brown;
+        }
+
+        /* 5. RESPONSIVE WELCOME HERO BOX */
+        .welcome {
+            color: brown;
+            text-align: center;
+            margin: 40px auto; /* Dynamically centers the content box */
+            width: 100%;
+            max-width: 750px;  /* Smoothly shrinks on mobile, limits on desktop */
+            background: rgba(255, 255, 255, 0.85); /* Semi-transparent background for readability */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Controlled, readable text scaling */
+        p {
+            font-size: 1.5rem; /* Scales relative to the browser size */
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 6. STICKY FOOTER */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto; /* Uses flex behavior to stick to screen bottom */
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* 7. DESKTOP ADAPTATION (Media Query) */
+        /* Changes behavior dynamically when screen width is wider than 768px */
+        @media screen and (min-width: 768px) {
+            .nav {
+                flex-direction: row;       /* Changes menu from vertical stack back to a horizontal line */
+                justify-content: center;   /* Spreads them out evenly or centers them */
+                gap: 30px;                 /* Generates clean gaps between tabs */
+            }
+
+            p {
+                font-size: 1.8rem;         /* Slightly larger text for bigger screens */
+            }
+
+            .footer {
+                text-align: right;         /* Matches original design on desktop view only */
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="nav">
-<div class="nav_options">HOME</div><div class="nav_options">VARNMALA</div><div class="nav_options">HINDI SCHOOL BOOK</div><div class="nav_options">PRACTICE WORKSHEET</div><div class="nav_options">STORIES</div></DIV>	
-<div class="welcome">
-<h5 lang="en">Welcome to this library.
 
-This web page will help you to learn and practice Hindi.</h5>
+<div class="container">
+    <!-- Cleaned up navigation (Removed un-scannable &nbsp; strings and float) -->
+    <nav class="nav">
+        <div class="nav_options">HOME</div>
+        <div class="nav_options">VARNMALA</div>
+        <div class="nav_options">HINDI SCHOOL BOOK</div>
+        <div class="nav_options">PRACTICE WORKSHEET</div>
+        <div class="nav_options">STORIES</div>
+    </nav>	
 
+    <main class="welcome">
+        <p lang="en">Welcome to this library.<br>This web page will help you to learn and practice Hindi.</p>
+        <p lang="hi">इस लाइब्रेरी में आपका स्वागत है।<br>यह वेब पेज आपको हिंदी सीखने और उसका अभ्यास करने में मदद करेगा।</p>
+    </main>
 
-<h5 lang="hi">इस लाइब्रेरी में आपका स्वागत है।
-
-यह वेब पेज आपको हिंदी सीखने और उसका अभ्यास करने में मदद करेगा।</h5>
+    <footer class="footer">
+        <i>Created By : Nidhi Chawla</i>
+    </footer>
 </div>
+
 </body>
 </html>
