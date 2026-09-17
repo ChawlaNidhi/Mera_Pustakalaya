@@ -62,10 +62,26 @@
             margin: 40px auto; /* Dynamically centers the content box */
             width: 100%;
             max-width: 750px;  /* Smoothly shrinks on mobile, limits on desktop */
+            
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
+	/* 1. Target the <a> tags with the class .nav_options for normal/clicked states */
+a.nav_options, 
+a.nav_options:link, 
+a.nav_options:visited {
+    color: darkgreen;         /* Keeps links darkgreen before and after being clicked */
+    text-decoration: none;    /* Removes the default link underline completely */
+    transition: color 0.2s;
+}
+
+/* 2. Target the <a> tags for when they are hovered or actively clicked */
+a.nav_options:hover,
+a.nav_options:active {
+    color: #cc6600;           /* Changes color to orange ONLY when mouse rolls over or presses it */
+    text-decoration: none;    /* Ensures the underline stays completely gone */
+}
 
         /* Controlled, readable text scaling */
         p {
@@ -113,8 +129,8 @@
     <nav class="nav">
         <div class="nav_options">HOME</div>
         <div class="nav_options">VARNMALA</div>
-        <div class="nav_options">HINDI SCHOOL BOOK</div>
-        <div class="nav_options">PRACTICE WORKSHEET</div>
+        <div >HINDI SCHOOL BOOK</div>
+        <div ><a href="worksheets.html" class="nav_options">PRACTICE WORKSHEET</a></div>
         <div class="nav_options">STORIES</div>
     </nav>	
 
