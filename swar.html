@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <!-- 1. CRITICAL: Enables mobile layout and proper device scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meri Pathshala</title>
+    <style>
+        /* 2. GLOBAL RESET & SIZING CONTROL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Prevents padding from breaking layouts */
+        }
+
+        body {
+            background: url("background.png") no-repeat center center fixed;
+            background-size: cover;
+            font-family: sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 3. WRAPPER CONTAINER */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        /* 4. UNIFORM LINK STYLES (No underlines, custom colors) */
+        a.nav_options, 
+        a.nav_options:link, 
+        a.nav_options:visited {
+            color: darkgreen;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a.nav_options:hover,
+        a.nav_options:active {
+            color: #cc6600; /* Changes to an orange tint on hover/click */
+            text-decoration: none;
+        }
+
+        /* 5. RESPONSIVE NAVIGATION */
+        .nav {
+            display: flex;
+            flex-direction: column; /* Stacked on mobile */
+            gap: 15px;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* 6. MAIN CONTENT BOX */
+        .welcome {
+            width: 100%;
+            max-width: 700px; 
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.95); /* High contrast readable card wrapper */
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .main_block {
+            color: #333;
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: brown;
+            margin: 25px 0 10px 0;
+            font-weight: bold;
+            border-bottom: 2px solid brown;
+            padding-bottom: 5px;
+        }
+
+        /* 7. COMPACT SWAR (VOWEL) LIST LAYOUT (Saves Space!) */
+        .swar-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 15px 0;
+            background-color: #F0E1C7; /* Original pink theme background */
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .swar-item {
+            display: flex;
+            flex-direction: column;
+            padding: 6px 0;
+            border-bottom: 1px dashed rgba(165, 42, 42, 0.2);
+        }
+
+        .swar-item:last-child {
+            border-bottom: none;
+        }
+
+        .swar-letter {
+            font-size: 1.5rem;
+            color: brown;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .swar-pronun {
+            font-weight: bold;
+            color: #111;
+        }
+
+        .swar-example {
+            color: #555;
+            font-size: 1rem;
+        }
+
+
+
+
+
+        /* 9. STICKY FOOTER */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* =======================================================
+           DESKTOP ADAPTATION (Screens wider than 768px)
+           ======================================================= */
+        @media screen and (min-width: 768px) {
+            .nav {
+                flex-direction: row;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            /* Swar Row switches to a tight horizontal layout */
+            .swar-item {
+                flex-direction: row;
+                align-items: center;
+            }
+            .swar-letter { width: 10%; }
+            .swar-pronun { width: 20%; }
+            .swar-example { width: 70%; }
+
+                    
+
+            .footer {
+                text-align: right;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav class="nav">
+        <a href="#home" class="nav_options">HOME</a>
+        <div><a href="varnmala.html"  class="nav_options">VARNMALA</a></div>
+
+        <a href="#books" class="nav_options">HINDI SCHOOL BOOK</a>
+        <a href="worksheets.html" class="nav_options">PRACTICE WORKSHEET</a>
+        <a href="#stories" class="nav_options">STORIES</a>
+    </nav>	
+
+    <main class="welcome">
+        <div class="main_block">
+            
+            <!-- VOWELS SECTION -->
+            <h2 class="section-title">Swar (Vowels - स्वर)</h2>
+            <p>These are independent sounds.</p>
+            
+            <div class="swar-list">
+                <div class="swar-item">
+                    <span class="swar-letter" lang="hi">अ</span>
+                    <span class="swar-pronun">A</span>
+                    <span class="swar-example">Like 'a' in about</span>
+                </div>
+                <div class="swar-item">
+                    <span class="swar-letter" lang="hi">आ</span>
+                    <span class="swar-pronun">Aa</span>
+                    <span class="swar-example">Like 'a' in father</span>
+                </div>
+                <div class="swar-item">
+                    <span class="swar-letter" lang="hi">इ</span>
+                    <span class="swar-pronun">I</span>
+                    <span class="swar-example">Like 'i' in it</span>
+                </div>
+                <div class="swar-item">
+                    <span class="swar-letter" lang="hi">ई</span>
+                    <span class="swar-pronun">Ee</span>
+                    <span class="swar-example">Like 'ee' in meet</span>
+                </div>
+                <div class="swar-item">
+                    <span class="swar-letter" lang="hi">उ</span>
+                    <span class="swar-pronun">U</span>
+                    <span class="swar-example">Like 'u' in put</span>
+                </div>
+                <div class="swar-item">
+                    <span class="swar-letter" lang="hi">ऊ</span>
+                    <span class="swar-pronun">Oo</span>
+                    <span class="swar-example">Like 'oo' in boot</span>
+                </div>
+                <div class="swar-item">
+                    <span class="swar-letter" lang="hi">ऋ</span>
+                    <span class="swar-pronun">Ri</span>
+                    <span class="swar-example">Like 'ri' in rigid</span>
+                </div>
+                <div class="swar-item">
+                    <span class="swar-letter" lang="hi">ए</span>
+                    <span class="swar-pronun"> Ae</span>
+                    <span class="swar-example">Like 'a' in may </span>
+                </div>
+                <div class="swar-item">
+                    <span class="swar-letter" lang="hi">ऐ</span>
+                    <span class="swar-pronun">Ai</span>
+                    <span class="swar-example">Like 'a' in mat or bag</span>
+                </div>
+                <div class="swar-item">
+                    <span class="swar-letter" lang="hi">ओ</span>
+                    <span class="swar-pronun">O</span>
+                    <span class="swar-example">Like 'o' in go</span>
+                </div>
+                <div class="swar-item">
+                    <span class="swar-letter" lang="hi">औ</span>
+                    <span class="swar-pronun">Au</span>
+                    <span class="swar-example">Like 'ou' in sought or bought</span>
+                </div>
+                <div class="swar-item">
+                    <span class="swar-letter" lang="hi">अं</span>
+                    <span class="swar-pronun">(Am / An)</span>
+                    <span class="swar-example">– Nasal sound like 'un' in under</span>
+                </div>
+                <div class="swar-item">
+                    <span class="swar-letter" lang="hi">अः</span>
+                    <span class="swar-pronun">(Aha)</span>
+                    <span class="swar-example">– Sound ending with a sharp breath like "ah-ha"</span>
+                </div>
+            </div>
+
+            <!-- CONSONANTS SECTION -->
