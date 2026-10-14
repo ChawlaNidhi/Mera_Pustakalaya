@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <!-- 1. CRITICAL: Enables mobile layout and scaling scales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meri Pathshala</title>
+    <style>
+        /* 2. GLOBAL RESET & SIZING CONTROL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Crucial for layout math */
+        }
+
+        body {
+            /* Fixes background image stretch and prevents duplicates */
+            background: url("background.png") no-repeat center center fixed;
+            background-size: cover;
+            font-family: sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 3. WRAPPER CONTAINER */
+        .container {
+            width: 100%;
+            max-width: 1200px; /* Limits size on massive desktop monitors */
+            margin: 0 auto;    /* Centers everything on the screen */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;           /* Pushes footer to the absolute bottom */
+        }
+
+        /* 4. RESPONSIVE NAVIGATION (Mobile-First) */
+        .nav {
+            display: flex;
+            flex-direction: column; /* Stack menu items vertically on mobile phones */
+            gap: 15px;              /* Replaces chaotic &nbsp; spacing */
+            text-align: center;
+            padding: 20px 0;
+            color: darkgreen;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav_options {
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .nav_options:hover {
+            color: brown;
+        }
+
+        /* 5. RESPONSIVE WELCOME HERO BOX */
+        .welcome {
+            color: brown;
+            text-align: center;
+            margin: 40px auto; /* Dynamically centers the content box */
+            width: 100%;
+            max-width: 750px;  /* Smoothly shrinks on mobile, limits on desktop */
+            
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+	/* 1. Target the <a> tags with the class .nav_options for normal/clicked states */
+a.nav_options, 
+a.nav_options:link, 
+a.nav_options:visited {
+    color: darkgreen;         /* Keeps links darkgreen before and after being clicked */
+    text-decoration: none;    /* Removes the default link underline completely */
+    transition: color 0.2s;
+}
+
+/* 2. Target the <a> tags for when they are hovered or actively clicked */
+a.nav_options:hover,
+a.nav_options:active {
+    color: #cc6600;           /* Changes color to orange ONLY when mouse rolls over or presses it */
+    text-decoration: none;    /* Ensures the underline stays completely gone */
+}
+
+        /* Controlled, readable text scaling */
+        p {
+            font-size: 1.5rem; /* Scales relative to the browser size */
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 6. STICKY FOOTER */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto; /* Uses flex behavior to stick to screen bottom */
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* 7. DESKTOP ADAPTATION (Media Query) */
+        /* Changes behavior dynamically when screen width is wider than 768px */
+        @media screen and (min-width: 768px) {
+            .nav {
+                flex-direction: row;       /* Changes menu from vertical stack back to a horizontal line */
+                justify-content: center;   /* Spreads them out evenly or centers them */
+                gap: 30px;                 /* Generates clean gaps between tabs */
+            }
+
+            p {
+                font-size: 1.5rem;         /* Slightly larger text for bigger screens */
+            }
+
+            .footer {
+                text-align: right;         /* Matches original design on desktop view only */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Cleaned up navigation (Removed un-scannable &nbsp; strings and float) -->
+    <nav class="nav">
+        <div><a href="index.html" class="nav_options">HOME<a/a></div>
+        <div><a href="varanmala.html"  class="nav_options">VARANMALA</a></div>
+        <div ><a href="HindiSchoolBooks.html"  class="nav_options">HINDI SCHOOL BOOK</a></div>
+        <div ><a href="worksheets.html" class="nav_options">PRACTICE WORKSHEET</a></div>
+        <div><a href="stories.html" class="nav_options">STORIES</div>
+    </nav>	
+
+    <main class="welcome">
+
+        <p lang="hi">
+<b><u>शेर और चूहा</u></b> <br>
+किसी जंगल में एक बड़ा शेर सो रहा था। उसके पास एक छोटा सा चूहा खेल रहा था। खेलते-खेलते वह चूहा शेर के शरीर पर कूदने लगा। इससे शेर की नींद खुल गई। <br>
+गुस्से में आकर शेर ने उस छोटे चूहे को अपने बड़े पंजों में दबोच लिया। चूहा बहुत डर गया। उसने कांपते हुए शेर से प्रार्थना की, "हे राजन्! मुझे छोड़ दीजिए। हो सकता है कि कभी भविष्य में मैं आपके किसी काम आ जाऊं।"
+शेर को चूहे की बात पर हंसी आ गई। उसने सोचा कि इतना छोटा जीव मेरी क्या मदद करेगा? फिर भी दया करके शेर ने चूहे को छोड़ दिया।<br>
+कुछ दिनों बाद, वह शेर जंगल में शिकार करते समय एक शिकारी के जाल में फंस गया। वह जोर-जोर से दहाड़ने लगा।<br>
+चूहे ने शेर की दहाड़ सुनी। वह तुरंत वहां दौड़ा आया। उसने देखा कि शेर जाल में फंसा है। चूहे ने अपने तेज दांतों से जाल की रस्सियों को काटना शुरू कर दिया। थोड़ी ही देर में चूहे ने पूरा जाल काट दिया और शेर को आजाद कर दिया।<br>
+शेर बहुत खुश हुआ। उसे समझ आ गया कि कोई भी छोटा या बड़ा नहीं होता, हर कोई खास होता है।<br>
+सीख : किसी भी छोटे प्राणी को कमजोर नहीं समझना चाहिए। समय आने पर हर कोई मदद कर सकता है।
+
+</p>
+    </main>
+
+    <footer class="footer">
+        <i>Created By : Nidhi Chawla</i>
+    </footer>
+</div>
+
+</body>
+</html>

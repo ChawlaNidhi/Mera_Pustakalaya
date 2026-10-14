@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- CRITICAL: Allows Hindi and English characters to display perfectly together without breaking -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devanagari Consonants Study Guide</title>
+    
+    <!-- Importing clean, high-legibility bilingual web fonts from Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+          /* 2. GLOBAL RESET & SIZING CONTROL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Prevents padding from breaking layouts */
+        }
+
+
+        body {
+            background: url("background.png") no-repeat center center fixed;
+            background-size: cover;
+            font-family: sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        
+         .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+
+        /* Language Typography Rule */
+        [lang="hi"] {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+	  /* 4. UNIFORM LINK STYLES (No underlines, custom colors) */
+        a.nav_options, 
+        a.nav_options:link, 
+        a.nav_options:visited {
+            color: darkgreen;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a.nav_options:hover,
+        a.nav_options:active {
+            color: #cc6600; /* Changes to an orange tint on hover/click */
+            text-decoration: none;
+        }
+
+ /* 5. RESPONSIVE NAVIGATION */
+        .nav {
+            display: flex;
+            flex-direction: column; /* Stacked on mobile */
+            gap: 15px;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+  /* 6. MAIN CONTENT BOX */
+        .welcome {
+            width: 100%;
+            max-width: 700px; 
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.95); /* High contrast readable card wrapper */
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+ .main_block {
+            color: #333;
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+   .section-title {
+            font-size: 1.5rem;
+            color: brown;
+            margin: 25px 0 10px 0;
+            font-weight: bold;
+            border-bottom: 2px solid brown;
+            padding-bottom: 5px;
+        }
+
+ /* 7. COMPACT SWAR (VOWEL) LIST LAYOUT (Saves Space!) */
+        .swar-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 15px 0;
+            background-color: #F0E1C7; /* Original pink theme background */
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .swar-item {
+            display: flex;
+            flex-direction: column;
+            padding: 6px 0;
+            border-bottom: 1px dashed rgba(165, 42, 42, 0.2);
+        }
+
+        .swar-item:last-child {
+            border-bottom: none;
+        }
+
+        .swar-letter {
+            font-size: 1.5rem;
+            color: brown;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .swar-pronun {
+            font-weight: bold;
+            color: #111;
+        }
+
+        .swar-example {
+            color: #555;
+            font-size: 1rem;
+        }
+
+
+
+
+
+        /* 9. STICKY FOOTER */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* =======================================================
+           DESKTOP ADAPTATION (Screens wider than 768px)
+           ======================================================= */
+        @media screen and (min-width: 768px) {
+            .nav {
+                flex-direction: row;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            /* Swar Row switches to a tight horizontal layout */
+            .swar-item {
+                flex-direction: row;
+                align-items: center;
+            }
+            .swar-letter { width: 10%; }
+            .swar-pronun { width: 20%; }
+            .swar-example { width: 70%; }
+
+                    
+
+            .footer {
+                text-align: right;
+            }
+        }
+
+
+
+        /* Headers from prignalllllllllll */
+        h1 {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 12px;
+            margin-bottom: 8px;
+        }
+        
+        h2 {
+            font-size: 1.6rem;
+            margin-top: 40px;
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        /* Category Card Layout blocks */
+        .group-card {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .group-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        /* Scannable Alphabet List Layout */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        /* Formatting structural segments of text */
+        .character-block {
+            display: inline-block;
+            min-width: 110px;
+            font-size: 1.25rem;
+        }
+
+        .character-block [lang="hi"] {
+            font-size: 1.4rem;
+            margin-right: 6px;
+            background: var(--primary-light);
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        .english-desc {
+            color: var(--text-dark);
+            flex: 1;
+            min-width: 250px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav class="nav">
+        <div><a href="index.html" class="nav_options">HOME<a/a></div>
+        <div><a href="varanmala.html"  class="nav_options">VARANMALA</a></div>
+        <div ><a href="HindiSchoolBooks.html"  class="nav_options">HINDI SCHOOL BOOK</a></div>
+        <div ><a href="worksheets.html" class="nav_options">PRACTICE WORKSHEET</a></div>
+        <div><a href="stories.html" class="nav_options">STORIES</div>
+ </nav>
+
+ <main class="welcome">
+        <div class="main_block">
+            
+   
+    <h2 class="section-title">Vyanjan<span lang="hi">व्यंजन</span></h2>
+    <p>Consonants are grouped logically by where the sound is produced in your mouth.</p>
+
+    <!-- Group 1: Velar Sounds -->
+    <div class="swar-list">
+        <p class="group-title">Ka-Varg (Velar Sounds - From the throat)</p>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">क</span> 				
+		     <span class="swar-pronun">K</span>
+                     <span class="swar-example"> Like 'k' in kite</span>
+        </div>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">ख</span> 				
+		     <span class="swar-pronun">Kha</span>
+                     <span class="swar-example">Like 'k' with a puff of air (as in khaki)</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">ग</span> 				
+		     <span class="swar-pronun">Ga</span>
+                     <span class="swar-example">Like 'g' in go</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">घ</span> 				
+		     <span class="swar-pronun">Gha</span>
+                     <span class="swar-example">Like 'g' with a puff of air (as in ghost)</span>
+         </div>
+
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">ङ</span> 				
+		     <span class="swar-pronun">Nga</span>
+                     <span class="swar-example">Nasal sound (rarely used on its own)</span>
+         </div>        
+                          
+    </div>
+
+    <!-- Group 2: Palatal Sounds -->
+    <div class="swar-list">
+        <p class="group-title">Cha-Varg (Velar Sounds - From the throat)</p>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">च</span> 			     <span class="swar-pronun">Cha</span>
+                     <span class="swar-example"> Like  ch in chair</span>
+        </div>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">छ</span> 			     <span class="swar-pronun">Chha</span>
+                     <span class="swar-example">Like 'ch' with a puff of air</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">ज </span> 			     <span class="swar-pronun">Ja</span>
+                     <span class="swar-example">Like 'j' in joy</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">झ</span> 			     <span class="swar-pronun">Jha</span>
+                     <span class="swar-example">Like 'jha' with a puff of air </span>
+         </div>
+
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">ञ </span> 			     <span class="swar-pronun">Nya</span>
+                     <span class="swar-example">Nasal sound (rarely used on its own)</span>
+         </div>        
+                          
+    </div>
+
+    <!-- Group 3: Retroflex Sounds -->
+        <div class="swar-list">
+        <p class="group-title">Ta-Varg (Velar Sounds - From the throat)</p>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">ट</span> 			     <span class="swar-pronun">Ta</span>
+                     <span class="swar-example"> Like t in tomato</span>
+        </div>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">ठ </span> 			     <span class="swar-pronun">Tha</span>
+                     <span class="swar-example">Like 't' with a puff of air</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">ड </span> 			     <span class="swar-pronun">Da</span>
+                     <span class="swar-example">Like 'd' in dog</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">ढ </span> 			     <span class="swar-pronun">Dha</span>
+                     <span class="swar-example">Like 'dha' with a puff of air </span>
+         </div>
+
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">ण </span> 			     <span class="swar-pronun">Na</span>
+                     <span class="swar-example">Retroflex n sound (tounge curled back)</span>
+         </div>        
+                          
+    </div>
+    <!-- Group 4: Dental Sounds -->
+            <div class="swar-list">
+        <p class="group-title">Ta-Varg (Dental Sounds - Tongue touches the front teeth)</p>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">त </span> 			     <span class="swar-pronun">Ta</span>
+                     <span class="swar-example"> Soft t sound,Like th in thee or Spanish 't'</span>
+        </div>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">थ  </span> 			     <span class="swar-pronun">Tha</span>
+                     <span class="swar-example">Soft t with a puff of air (like th in thank you)</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">द </span> 			     <span class="swar-pronun">Da</span>
+                     <span class="swar-example">Soft d sound (like th in them or this)</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">ध  </span> 			     <span class="swar-pronun">Dha</span>
+                     <span class="swar-example">Soft 'dha' with a puff of air </span>
+         </div>
+
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">न  </span> 			     <span class="swar-pronun">Na</span>
+                     <span class="swar-example">Soft n sound (like n in net)</span>
+         </div>        
+                          
+    </div>
+
+    <!-- Group 5: Labial Sounds -->
+                <div class="swar-list">
+        <p class="group-title">Ta-Varg (Dental Sounds - Tongue touches the front teeth)</p>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">त </span> 			     <span class="swar-pronun">Ta</span>
+                     <span class="swar-example"> Soft t sound,Like th in thee or Spanish 't'</span>
+        </div>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">थ  </span> 			     <span class="swar-pronun">Tha</span>
+                     <span class="swar-example">Soft t with a puff of air (like th in thank you)</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">द </span> 			     <span class="swar-pronun">Da</span>
+                     <span class="swar-example">Soft d sound (like th in them or this)</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">ध  </span> 			     <span class="swar-pronun">Dha</span>
+                     <span class="swar-example">Soft 'dha' with a puff of air </span>
+         </div>
+
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">न  </span> 			     <span class="swar-pronun">Na</span>
+                     <span class="swar-example">Soft n sound (like n in net)</span>
+         </div>        
+                          
+    </div>
+
+
+ <!-- Pa-Varg (Labial Sounds - Produced using lips) -->
+                <div class="swar-list">
+        <p class="group-title">Pa-Varg (Labial Sounds - Produced using lips)</p>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">प </span> 			     <span class="swar-pronun">Pa</span>
+                     <span class="swar-example"> Like p in pen</span>
+        </div>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">फ  </span> 			     <span class="swar-pronun">Pha/Fa</span>
+                     <span class="swar-example">Like f in fan</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">ब  </span> 			     <span class="swar-pronun">Ba</span>
+                     <span class="swar-example">Like b in bat</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">भ   </span> 			     <span class="swar-pronun">Bha</span>
+                     <span class="swar-example">Like bha in <i>bhajan</i></span>
+         </div>
+
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">म  </span> 			     <span class="swar-pronun">Ma</span>
+                     <span class="swar-example">Like m in mat</span>
+         </div>        
+                          
+    </div>
+
+
+ <!-- Antastha (Semi -vowel) -->
+                <div class="swar-list">
+        <p class="group-title">Antastha(Semi Vowels)</p>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">य </span> 			     <span class="swar-pronun">Ya</span>
+                     <span class="swar-example"> Like y in yes</span>
+        </div>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">र   </span> 			     <span class="swar-pronun">Ra/Fa</span>
+                     <span class="swar-example">Like r in ran</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">ल </span> 			     <span class="swar-pronun">La</span>
+                     <span class="swar-example">Like l in lip</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">व    </span> 			     <span class="swar-pronun">Va/Wa</span>
+                     <span class="swar-example">Like w in was</span>
+         </div>
+
+      </div>
+ <!-- Ushma(Sibilants/Fricativies -->
+                <div class="swar-list">
+        <p class="group-title">Ushma(Sibilants/Fricatives)</p>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">श  </span> 			     <span class="swar-pronun">Sha</span>
+                     <span class="swar-example"> Like sh in shoe</span>
+        </div>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">ष    </span> 			     <span class="swar-pronun"></span>
+                     <span class="swar-example">Like r in ran</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">स  </span> 			     <span class="swar-pronun">Sa</span>
+                     <span class="swar-example">Like s in sun</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">ह     </span> 			     <span class="swar-pronun">Ha</span>
+                     <span class="swar-example">Like h in home</span>
+         </div>
+
+      </div>
+       
+
+ <!-- Additional Retroflox Consonants -->
+                <div class="swar-list">
+        <p class="group-title">Additional Retroflex Consonants/p>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">ड़  </span> 			     <span class="swar-pronun">Ra/Da</span>
+                     <span class="swar-example"> Like soft dd  </span>
+        </div>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">ढ़    </span> 			     <span class="swar-pronun">Rha/Dha</span>
+                     <span class="swar-example"></span>
+        </div>
+       
+
+      </div>
+
+
+ <!-- Sanyukt Vyanjan (Compound Consonants) -->
+                <div class="swar-list">
+        <p class="group-title">Sanyukt Vyanjan (Compund Consonants - संयुक्त व्यंजन)) - These are 4 letters formed by combining two consonants together.</p>
+
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">क्ष </span> 			     <span class="swar-pronun">Ksha</span>
+                     <span class="swar-example"> Combination of K+Sha</span>
+        </div>
+	<div class="swar-item">
+                     <span class="swar-letter" lang="hi">त्र     </span> 			     <span class="swar-pronun">Tra</span>
+                     <span class="swar-example">Like tr in trip</span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">ज्ञ </span> 			     <span class="swar-pronun">Gya/Jya</span>
+                     <span class="swar-example">Combination of J + Nya </span>
+        </div>
+        <div class="swar-item">
+                     <span class="swar-letter" lang="hi">श्र      </span> 			     <span class="swar-pronun">Shra</span>
+                     <span class="swar-example">Like shr in shred</span>
+         </div>
+
+      </div>
+
+</body>
+</html>
