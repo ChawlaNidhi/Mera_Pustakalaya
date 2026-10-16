@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <!-- 1. CRITICAL: Enables mobile layout and scaling scales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meri Pathshala</title>
+    <style>
+        /* 2. GLOBAL RESET & SIZING CONTROL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Crucial for layout math */
+        }
+
+        body {
+            /* Fixes background image stretch and prevents duplicates */
+            background: url("background.png") no-repeat center center fixed;
+            background-size: cover;
+            font-family: sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 3. WRAPPER CONTAINER */
+        .container {
+            width: 100%;
+            max-width: 1200px; /* Limits size on massive desktop monitors */
+            margin: 0 auto;    /* Centers everything on the screen */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;           /* Pushes footer to the absolute bottom */
+        }
+
+        /* 4. RESPONSIVE NAVIGATION (Mobile-First) */
+        .nav {
+            display: flex;
+            flex-direction: column; /* Stack menu items vertically on mobile phones */
+            gap: 15px;              /* Replaces chaotic &nbsp; spacing */
+            text-align: center;
+            padding: 20px 0;
+            color: darkgreen;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav_options {
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .nav_options:hover {
+            color: brown;
+        }
+
+        /* 5. RESPONSIVE WELCOME HERO BOX */
+        .welcome {
+            color: brown;
+            text-align: center;
+            margin: 40px auto; /* Dynamically centers the content box */
+            width: 100%;
+            max-width: 750px;  /* Smoothly shrinks on mobile, limits on desktop */
+            
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Controlled, readable text scaling */
+        p {
+            font-size: 1.5rem; /* Scales relative to the browser size */
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 6. STICKY FOOTER */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto; /* Uses flex behavior to stick to screen bottom */
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* 7. DESKTOP ADAPTATION (Media Query) */
+        /* Changes behavior dynamically when screen width is wider than 768px */
+        @media screen and (min-width: 768px) {
+            .nav {
+                flex-direction: row;       /* Changes menu from vertical stack back to a horizontal line */
+                justify-content: center;   /* Spreads them out evenly or centers them */
+                gap: 30px;                 /* Generates clean gaps between tabs */
+            }
+
+            p {
+                font-size: 1.8rem;         /* Slightly larger text for bigger screens */
+            }
+
+            .footer {
+                text-align: right;         /* Matches original design on desktop view only */
+            }
+        }
+
+ .worksheet-table-container {
+        width: 100%;
+        max-width: 750px;
+        margin: 20px auto;
+        overflow-x: auto;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        padding: 10px;
+    }
+
+    .worksheet-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-family: sans-serif;
+    }
+
+    .worksheet-table th {
+        background-color: darkgreen;
+        color: white;
+        padding: 12px 15px;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    .worksheet-table th:first-child {
+        border-top-left-radius: 8px;
+    }
+    
+    .worksheet-table th:last-child {
+        border-top-right-radius: 8px;
+    }
+
+    .worksheet-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 1.1rem;
+    }
+
+    .worksheet-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .worksheet-table tr:hover {
+        background-color: rgba(204, 102, 0, 0.05); /* Light orange hover effect */
+    }
+
+    /* Worksheet specific link style */
+    a.worksheet-link {
+        color: #cc6600;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        transition: color 0.2s, transform 0.2s;
+    }
+
+    a.worksheet-link:hover {
+        color: brown;
+        transform: translateX(3px); /* Subtle nudge animation */
+    }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Cleaned up navigation (Removed un-scannable &nbsp; strings and float) -->
+    <nav class="nav">
+         <div><a href="index.html" class="nav_options">HOME<a/a></div>
+        <div><a href="varanmala.html"  class="nav_options">VARANMALA</a></div>
+        <div ><a href="HindiSchoolBooks.html"  class="nav_options">HINDI SCHOOL BOOK</a></div>
+        <div ><a href="worksheets.html" class="nav_options">PRACTICE WORKSHEET</a></div>
+        <div><a href="stories.html" class="nav_options">STORIES</a></div>
+ 
+    </nav>	
+
+    <main class="welcome">
+        <p lang="hi">अभ्यास पत्र  / वर्कशीट </p>
+<p lang="hi"> "करत-करत अभ्यास के, जड़मति होत सुजान।
+<br>रसरी आवत-जात ते, सिल पर परत निसान॥"</p>
+
+<div class="worksheet-table-container">
+    <table class="worksheet-table">
+           <tbody>
+            <tr>
+                <td><strong><a href="Practice Worksheet_अ.pdf" class="worksheet-link">अ</a></strong></td>
+                <td><strong><a href="Practice Worksheet_आ.pdf" class="worksheet-link">आ</a></strong></td>
+		<td><strong><a href="Practice Worksheet_इ.pdf" class="worksheet-link">इ</a></strong></td>		<td><strong><a href="Practice Worksheet_ई.pdf" class="worksheet-link">ई</a></strong></td>
+		<td><strong><a href="Practice Worksheet_उ.pdf" class="worksheet-link">उ</a></strong></td>		<td><strong><a href="Practice Worksheet_ऊ.pdf" class="worksheet-link">ऊ</a></strong></td>		<td><strong><a href="Practice Worksheet_ऋ.pdf" class="worksheet-link">ऋ</a></strong></td>
+            </tr>
+<td><strong><a href="Practice Worksheet_ए.pdf" class="worksheet-link">ए</a></strong></td>
+                <td><strong><a href="Practice Worksheet_ऐ.pdf" class="worksheet-link">ऐ</a></strong></td>
+		<td><strong><a href="Practice Worksheet_ओ.pdf" class="worksheet-link">ओ</a></strong></td>		<td><strong><a href="Practice Worksheet_औ.pdf" class="worksheet-link">औ</a></strong></td>
+		<td><strong><a href="Practice Worksheet_अं.pdf" class="worksheet-link">अं</a></strong></td>		<td><strong><a href="Practice Worksheet_अः.pdf" class="worksheet-link">अः</a></strong></td>		</tr>
+            <tr>
+                <td><strong><a href="Practice Worksheet_क.pdf" class="worksheet-link">क</a></strong></td>
+                <td><strong><a href="Practice Worksheet_ख.pdf" class="worksheet-link">ख</a></strong></td>
+		<td><strong><a href="Practice Worksheet_ग.pdf" class="worksheet-link">ग</a></strong></td>		<td><strong><a href="Practice Worksheet_घ.pdf" class="worksheet-link">घ</a></strong></td>
+		<td><strong><a href="Practice Worksheet_ङ.pdf" class="worksheet-link">ङ</a></strong></td>		
+
+            </tr>
+<tr>
+                <td><strong><a href="Practice Worksheet_च.pdf" class="worksheet-link">च</a></strong></td>
+                <td><strong><a href="Practice Worksheet_छ.pdf" class="worksheet-link">छ</a></strong></td>
+		<td><strong><a href="Practice Worksheet_ज.pdf" class="worksheet-link">ज</a></strong></td>		<td><strong><a href="Practice Worksheet_झ.pdf" class="worksheet-link">झ</a></strong></td>
+		<td><strong><a href="Practice Worksheet_ञ.pdf" class="worksheet-link">ञ</a></strong></td>		
+
+            </tr>
+
+<tr>
+                <td><strong><a href="Practice Worksheet_ट.pdf" class="worksheet-link">ट</a></strong></td>
+                <td><strong><a href="Practice Worksheet_ठ.pdf" class="worksheet-link">ठ</a></strong></td>
+		<td><strong><a href="Practice Worksheet_ड.pdf" class="worksheet-link">ड</a></strong></td>		<td><strong><a href="Practice Worksheet_ढ.pdf" class="worksheet-link">ढ</a></strong></td>
+		<td><strong><a href="Practice Worksheet_ण.pdf" class="worksheet-link">ण</a></strong></td>		</tr>
+
+                   <tr>
+                <td><strong><a href="Practice Worksheet_प.pdf" class="worksheet-link">प</a></strong></td>
+                <td><strong><a href="Practice Worksheet_फ.pdf" class="worksheet-link">फ</a></strong></td>
+		<td><strong><a href="Practice Worksheet_ब.pdf" class="worksheet-link">ब</a></strong></td>		<td><strong><a href="Practice Worksheet_भ.pdf" class="worksheet-link">भ</a></strong></td>
+		<td><strong><a href="Practice Worksheet_म.pdf" class="worksheet-link">म</a></strong></td>		</tr>   
+ <tr>
+                <td><strong><a href="Practice Worksheet_य.pdf" class="worksheet-link">य</a></strong></td>
+                <td><strong><a href="Practice Worksheet_र.pdf" class="worksheet-link">र</a></strong></td>
+		<td><strong><a href="Practice Worksheet_ल.pdf" class="worksheet-link">ल</a></strong></td>		<td><strong><a href="Practice Worksheet_व.pdf" class="worksheet-link">व</a></strong></td>
+				</tr>    
+<tr>
+                
+<tr>
+                <td><strong><a href="Practice Worksheet_श.pdf" class="worksheet-link">श</a></strong></td>
+                <td><strong><a href="Practice Worksheet_ष.pdf" class="worksheet-link">ष</a></strong></td>
+		<td><strong><a href="Practice Worksheet_स.pdf" class="worksheet-link">स</a></strong></td>		<td><strong><a href="Practice Worksheet_ह.pdf" class="worksheet-link">ह</a></strong></td>
+				</tr> 
+ 
+<tr>
+                <td><strong><a href="Practice Worksheet_क्ष.pdf" class="worksheet-link">क्ष</a></strong></td>
+                <td><strong><a href="Practice Worksheet_त्र.pdf" class="worksheet-link">त्र</a></strong></td>
+		<td><strong><a href="Practice Worksheet_ज्ञ.pdf" class="worksheet-link">ज्ञ</a></strong></td>		<td><strong><a href="Practice Worksheet_श्र.pdf" class="worksheet-link">श्र</a></strong></td>
+				</tr> 
+ <tr>
+                <td><strong><a href="Practice Worksheet_ड़.pdf" class="worksheet-link">ड़</a></strong></td>
+                <td><strong><a href="Practice Worksheet_ढ़.pdf" class="worksheet-link">ढ़</a></strong></td>
+		
+				</tr> 
+
+ 
+
+            
+        </tbody>
+    </table>
+</div>    </main>
+
+    <footer class="footer">
+        <i>Created By : Nidhi Chawla</i>
+    </footer>
+</div>
+
+</body>
+</html>
+
+
+
